@@ -1,164 +1,910 @@
-G
-GigSathi
-Solutions
-How it works
-Industries
-Contact
-Talk to us
-Workforce execution, built for scale
-Get work done.
-At scale.
-GigSathi Management Services helps businesses hire, deploy and manage delivery riders, field executives, sales teams, gig workers and operational workforce — with speed, visibility and accountability.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigSathi | Asia's Largest Task Fulfillment and Gig Staffing Platform</title>
+    <meta name="description" content="GigSathi Management Services helps businesses hire, deploy and manage delivery riders, field executives, sales teams, and gig workers.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --dark-bg: #0b1021;
+            --card-bg: #131b35;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent: #38bdf8;
+            --green: #22c55e;
+            --text-white: #ffffff;
+            --text-light: #94a3b8;
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-Start a Pilot →
-Call GigSathi
-Fast deployment
-Built for urgent workforce needs
-Live visibility
-Track execution & productivity
-Pan-India model
-Flexible city-wise scaling
-GigSathi Control Center
-● LIVE OPERATIONS
-Active workforce
-1,500+
-Tasks today
-8,420
-Completion
-98.4%
-Deployment health
-Rider Hiring
-91%
-Field Sales
-84%
-Audits
-96%
-Delhi NCR · Delivery Riders
-● Active
-Noida · Merchant Acquisition
-● 128 deployed
-Lucknow · Field Verification
-● 94% done
-1,500+
-Workforce network*
-100+
-Enterprise / business projects*
-Pan-India
-Deployment model
-24×7
-Operational support
-What we execute
-One partner for workforce execution.
-From sourcing and onboarding to deployment, attendance, quality checks and reporting — GigSathi is designed to reduce the operational load on your team.
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-01
-Rider Hiring
-Delivery riders and last-mile workforce for quick commerce, food delivery and logistics operations.
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-white);
+            background-color: var(--dark-bg);
+        }
 
-02
-Gig Staffing
-Flexible workforce for seasonal peaks, projects, city launches and on-demand operations.
+        body {
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-03
-Field Sales
-Field executives for merchant acquisition, customer acquisition, lead generation and BD.
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-04
-Audits & Verification
-Retail audits, KYC support, field verification, market visits and structured reporting.
+        section {
+            padding: 90px 0;
+        }
 
-05
-Telecalling
-Trained calling teams for lead qualification, follow-ups, customer support and campaigns.
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 60px auto;
+        }
 
-06
-Warehouse Manpower
-Pickers, packers, loaders and hub support workforce for high-volume operations.
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
 
-07
-Retail Workforce
-Promoters, retail staff and feet-on-street teams for multi-location execution.
+        .section-header h2 span {
+            color: var(--accent);
+        }
 
-08
-Customer Acquisition
-Distributed acquisition teams for fintech, BFSI, commerce and digital products.
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
 
-How it works
-From requirement to deployment — without the chaos.
-A structured operating model that lets your business focus on outcomes while GigSathi manages the workforce layer.
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            gap: 10px;
+        }
 
-01
-Requirement & Screening
-Understand role, geography, volume and SLA; source and screen the right workforce.
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+        }
 
-02
-Onboarding & Training
-KYC, documentation, SOP training and role-specific onboarding before deployment.
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
 
-03
-Deployment & Tracking
-Deploy city-wise and monitor attendance, productivity and field progress.
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-white);
+        }
 
-04
-QC, Reporting & Billing
-Validate execution, resolve exceptions and provide structured reports for closure.
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
 
-Source & ScreenLive TrackingQC & ReportsDeploy
-GIG
-OPERATING
-LAYER
-Built for real-world operations
-Industries we can support.
-Flexible workforce and field execution across high-frequency, distributed business environments.
+        /* NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 16, 33, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 18px 0;
+        }
 
-Logistics & Delivery
-Riders · hubs · last mile
-E-commerce
-Delivery · retail · operations
-BFSI & Fintech
-Acquisition · verification · sales
-Retail & FMCG
-Audits · promoters · merchandising
-Quick Commerce
-Dark-store & delivery staffing
-Consumer Brands
-Field marketing · activation
-Market Research
-Surveys · mystery shopping
-Technology
-Field ops · data collection
-Have a workforce requirement?
-Tell us the city, role and expected volume. We’ll build a practical deployment plan around your business.
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-Discuss your requirement →
-Start a conversation
-Let’s build your execution plan.
-Share your requirement and the GigSathi team can connect with you to discuss scope, locations and deployment.
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-white);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
 
-GigSathi Management Services
-Office
-B21, Sec 63, Noida, UP
-Phone
-+91 70429 215363
-Email
-Shanku.Singh@gigsathi.in
-Best for
-Rider hiring · Gig staffing · Field sales · Audits · Acquisition
-Start a Pilot
-Full name
-Company name
-Phone number
-Work email
+        .logo span {
+            color: var(--primary);
+        }
 
-Select service required
-Tell us about your requirement — city, workforce needed, volume, timeline...
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
 
-Submit Requirement →
-FAQ
-Questions, answered.
-How quickly can GigSathi deploy workforce?
-Can you handle multi-city requirements?
-Do you provide only hiring or end-to-end management?
-Can we start with a small pilot?
-© 2026 GigSathi Management Services. All rights reserved.
-B21, Sec 63, Noida, UP · +91 70429 215363 · Shanku.Singh@gigsathi.in
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-white);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-white);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 160px 0 80px 0;
+            background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.15) 0%, rgba(11, 16, 33, 0) 70%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: var(--accent);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            border-top: 1px solid var(--card-border);
+            padding-top: 24px;
+        }
+
+        .hf-item h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .hf-item p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* CONTROL CENTER (DASHBOARD PREVIEW) */
+        .control-center {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .cc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .cc-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--green);
+        }
+
+        .cc-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .cc-stat-card {
+            background: rgba(11, 16, 33, 0.6);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+        }
+
+        .cc-stat-card span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .cc-stat-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .cc-chips {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cc-chip {
+            background: rgba(11, 16, 33, 0.4);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--card-border);
+        }
+
+        .cc-chip-status {
+            font-size: 0.75rem;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* METRICS BAR */
+        .metrics-bar {
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            padding: 40px 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .metric-item h3 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .metric-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 30px 24px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .service-num {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* WORKFLOW / PROCESS */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 28px 20px;
+            border-radius: var(--radius);
+        }
+
+        .process-step {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 12px;
+        }
+
+        .process-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* INDUSTRIES */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .industry-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 24px;
+            border-radius: var(--radius);
+        }
+
+        .industry-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-white);
+        }
+
+        .industry-card p {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* CONTACT & FORM */
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .info-item i {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(11, 16, 33, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 60px 0 30px 0;
+            background: #070a14;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--card-border);
+            padding-top: 24px;
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .contact-box { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 40px 0;
+                transition: var(--transition);
+            }
+            .nav-menu.active { left: 0; }
+            .hamburger { display: block; }
+            .hero-features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">GIGSATHI<span>.</span></a>
+            <button class="hamburger" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#industries" class="nav-link">Industries</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary" style="padding: 8px 20px;">Talk to us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-bolt"></i> Asia's Largest Task Fulfillment Platform
+                </div>
+                <h1>Workforce execution, <span>built for scale.</span></h1>
+                <p>GigSathi Management Services helps businesses hire, deploy and manage delivery riders, field executives, sales teams, gig workers and operational workforce — with speed, visibility and accountability.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Start a Pilot <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="tel:+9170429215363" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call GigSathi</a>
+                </div>
+                <div class="hero-features">
+                    <div class="hf-item">
+                        <h4>Fast deployment</h4>
+                        <p>Built for urgent workforce needs</p>
+                    </div>
+                    <div class="hf-item">
+                        <h4>Live visibility</h4>
+                        <p>Track execution & productivity</p>
+                    </div>
+                    <div class="hf-item">
+                        <h4>Pan-India model</h4>
+                        <p>Flexible city-wise scaling</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD CONTROL CENTER PREVIEW -->
+            <div class="control-center">
+                <div class="cc-header">
+                    <div class="cc-title"><span class="live-dot"></span> LIVE OPERATIONS</div>
+                    <span style="font-size:0.75rem; color:var(--text-light);">GigSathi Control Center</span>
+                </div>
+                <div class="cc-stats">
+                    <div class="cc-stat-card">
+                        <span>Active Workforce</span>
+                        <h3>1,500+</h3>
+                    </div>
+                    <div class="cc-stat-card">
+                        <span>Tasks Today</span>
+                        <h3>8,420</h3>
+                    </div>
+                    <div class="cc-stat-card">
+                        <span>Completion</span>
+                        <h3>98.4%</h3>
+                    </div>
+                </div>
+                <div class="cc-chips">
+                    <div class="cc-chip">
+                        <span>Delhi NCR · Delivery Riders</span>
+                        <span class="cc-chip-status">● Active</span>
+                    </div>
+                    <div class="cc-chip">
+                        <span>Noida · Merchant Acquisition</span>
+                        <span class="cc-chip-status">● 128 deployed</span>
+                    </div>
+                    <div class="cc-chip">
+                        <span>Lucknow · Field Verification</span>
+                        <span class="cc-chip-status">● 94% done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS BAR -->
+    <section class="metrics-bar">
+        <div class="container metrics-grid">
+            <div class="metric-item">
+                <h3>1,500+</h3>
+                <p>Workforce Network*</p>
+            </div>
+            <div class="metric-item">
+                <h3>100+</h3>
+                <p>Enterprise / Business Projects*</p>
+            </div>
+            <div class="metric-item">
+                <h3>Pan-India</h3>
+                <p>Deployment Model</p>
+            </div>
+            <div class="metric-item">
+                <h3>24×7</h3>
+                <p>Operational Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE EXECUTE (SOLUTIONS) -->
+    <section id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>What we <span>execute</span></h2>
+                <p>One partner for workforce execution. From sourcing and onboarding to deployment, attendance, quality checks and reporting — GigSathi is designed to reduce the operational load on your team.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <h3>Rider Hiring</h3>
+                    <p>Delivery riders and last-mile workforce for quick commerce, food delivery and logistics operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <h3>Gig Staffing</h3>
+                    <p>Flexible workforce for seasonal peaks, projects, city launches and on-demand operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">03</div>
+                    <h3>Field Sales</h3>
+                    <p>Field executives for merchant acquisition, customer acquisition, lead generation and BD.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">04</div>
+                    <h3>Audits & Verification</h3>
+                    <p>Retail audits, KYC support, field verification, market visits and structured reporting.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">05</div>
+                    <h3>Telecalling</h3>
+                    <p>Trained calling teams for lead qualification, follow-ups, customer support and campaigns.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">06</div>
+                    <h3>Warehouse Manpower</h3>
+                    <p>Pickers, packers, loaders and hub support workforce for high-volume operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">07</div>
+                    <h3>Retail Workforce</h3>
+                    <p>Promoters, retail staff and feet-on-street teams for multi-location execution.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">08</div>
+                    <h3>Customer Acquisition</h3>
+                    <p>Distributed acquisition teams for fintech, BFSI, commerce and digital products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" style="background: rgba(255,255,255,0.01);">
+        <div class="container">
+            <div class="section-header">
+                <h2>How it <span>works</span></h2>
+                <p>From requirement to deployment — without the chaos. A structured operating model that lets your business focus on outcomes while GigSathi manages the workforce layer.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-step">01</div>
+                    <h4>Requirement & Screening</h4>
+                    <p>Understand role, geography, volume and SLA; source and screen the right workforce.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">02</div>
+                    <h4>Onboarding & Training</h4>
+                    <p>KYC, documentation, SOP training and role-specific onboarding before deployment.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">03</div>
+                    <h4>Deployment & Tracking</h4>
+                    <p>Deploy city-wise and monitor attendance, productivity and field progress.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">04</div>
+                    <h4>QC, Reporting & Billing</h4>
+                    <p>Validate execution, resolve exceptions and provide structured reports for closure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries we <span>support</span></h2>
+                <p>Flexible workforce and field execution across high-frequency, distributed business environments.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <h4>Logistics & Delivery</h4>
+                    <p>Riders · hubs · last mile</p>
+                </div>
+                <div class="industry-card">
+                    <h4>E-commerce</h4>
+                    <p>Delivery · retail · operations</p>
+                </div>
+                <div class="industry-card">
+                    <h4>BFSI & Fintech</h4>
+                    <p>Acquisition · verification · sales</p>
+                </div>
+                <div class="industry-card">
+                    <h4>Retail & FMCG</h4>
+                    <p>Audits · promoters · merchandising</p>
+                </div>
+                <div class="industry-card">
+                    <h4>Quick Commerce</h4>
+                    <p>Dark-store & delivery staffing</p>
+                </div>
+                <div class="industry-card">
+                    <h4>Consumer Brands</h4>
+                    <p>Field marketing · activation</p>
+                </div>
+                <div class="industry-card">
+                    <h4>Market Research</h4>
+                    <p>Surveys · mystery shopping</p>
+                </div>
+                <div class="industry-card">
+                    <h4>Technology</h4>
+                    <p>Field ops · data collection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h2>Start a conversation</h2>
+                    <p>Share your requirement and the GigSathi team can connect with you to discuss scope, locations and deployment.</p>
+                    
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fa-solid fa-building"></i>
+                            <div>
+                                <h5 style="color:var(--text-light); font-size:0.8rem;">Office</h5>
+                                <strong>B21, Sec 63, Noida, UP</strong>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h5 style="color:var(--text-light); font-size:0.8rem;">Phone</h5>
+                                <strong>+91 70429 215363</strong>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h5 style="color:var(--text-light); font-size:0.8rem;">Email</h5>
+                                <strong>Shanku.Singh@gigsathi.in</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Requirement submitted successfully!');">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" placeholder="Company Ltd" required>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="+91 9876543210" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Email</label>
+                            <input type="email" class="form-control" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Service Required</label>
+                        <select class="form-control" required>
+                            <option value="">Choose a service...</option>
+                            <option value="rider">Rider Hiring</option>
+                            <option value="gig">Gig Staffing</option>
+                            <option value="sales">Field Sales</option>
+                            <option value="audit">Audits & Verification</option>
+                            <option value="telecalling">Telecalling</option>
+                            <option value="warehouse">Warehouse Manpower</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Requirement Details</label>
+                        <textarea class="form-control" rows="3" placeholder="Tell us about your requirement — city, workforce needed, volume, timeline..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Submit Requirement →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container text-center">
+            <h3 style="font-weight:800; margin-bottom:8px;">GIGSATHI<span>.</span></h3>
+            <p style="color:var(--text-light); font-size:0.9rem;">© 2026 GigSathi Management Services. All rights reserved.</p>
+            <p style="color:var(--text-light); font-size:0.85rem; margin-top:6px;">B21, Sec 63, Noida, UP · +91 70429 215363 · Shanku.Singh@gigsathi.in</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
