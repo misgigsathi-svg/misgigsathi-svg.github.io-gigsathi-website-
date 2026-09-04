@@ -1,861 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GigSathi | On-Demand Staffing & Workforce Solutions</title>
-    <meta name="description" content="GigSathi provides on-demand gig workers and workforce solutions across India for delivery, field sales, merchant onboarding, and back-office operations.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- OKAYGO DESIGN SYSTEM --- */
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --dark-bg: #0b1021;
-            --card-bg: #131b35;
-            --accent: #38bdf8;
-            --text-white: #ffffff;
-            --text-light: #94a3b8;
-            --text-dark: #1e293b;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-white);
-            background-color: var(--dark-bg);
-        }
-
-        body {
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto 60px auto;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header h2 span {
-            color: var(--accent);
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.15rem;
-        }
-
-        /* --- BUTTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 50px;
-            transition: var(--transition);
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-white);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        /* --- NAVIGATION --- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(11, 16, 33, 0.8);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 18px 0;
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--text-white);
-            text-decoration: none;
-            letter-spacing: -0.03em;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 36px;
-            align-items: center;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--text-white);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-white);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 180px 0 100px 0;
-            background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.15) 0%, rgba(11, 16, 33, 0) 70%);
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: var(--accent);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 {
-            font-size: 4.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            max-width: 680px;
-            margin: 0 auto 40px auto;
-        }
-
-        .hero-ctas {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        /* --- TOGGLE TABS (OKAYGO STYLE) --- */
-        .toggle-section {
-            padding: 40px 0;
-        }
-
-        .tab-switcher {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .tab-box {
-            background: var(--card-bg);
-            padding: 6px;
-            border-radius: 50px;
-            display: flex;
-            border: 1px solid var(--border-color);
-        }
-
-        .tab-btn {
-            padding: 12px 32px;
-            border-radius: 50px;
-            border: none;
-            background: transparent;
-            color: var(--text-light);
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .tab-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        /* --- CARDS & SERVICES --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 36px 28px;
-            border-radius: var(--radius);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.98rem;
-        }
-
-        /* --- STATS SECTION --- */
-        .stats-section {
-            background: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 60px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-item p {
-            color: var(--text-light);
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        /* --- PROCESS SECTION --- */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-
-        .process-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            position: relative;
-        }
-
-        .process-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.1);
-            margin-bottom: 16px;
-        }
-
-        .process-card h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .process-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* --- CONTACT / FORM SECTION --- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 60px;
-        }
-
-        .contact-info h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .contact-info p {
-            color: var(--text-light);
-            margin-bottom: 40px;
-        }
-
-        .info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .info-item i {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(11, 16, 33, 0.6);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            color: white;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 80px 0 40px 0;
-            background: #070a14;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: var(--text-light);
-            max-width: 380px;
-            margin-bottom: 24px;
-        }
-
-        .footer-links h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* --- FLOATING WIDGETS --- */
-        .float-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            z-index: 999;
-            transition: var(--transition);
-        }
-
-        .float-whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 3rem; }
-            .contact-container { grid-template-columns: 1fr; padding: 40px 24px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--dark-bg);
-                flex-direction: column;
-                padding: 40px 0;
-                transition: var(--transition);
-            }
-            .nav-menu.active { left: 0; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.4rem; }
-            .hero-ctas { flex-direction: column; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- NAVBAR -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">GIGSATHI<span>.</span></a>
-            <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Solutions</a></li>
-                <li><a href="#process" class="nav-link">How It Works</a></li>
-                <li><a href="#contact" class="nav-link">Hire Staff</a></li>
-                <li><a href="#contact" class="btn btn-primary" style="padding: 10px 24px;">Get Started</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fa-solid fa-bolt"></i> On-Demand Staffing Platform
-            </div>
-            <h1>Hire Verified On-Demand <span>Workforce</span> in Minutes</h1>
-            <p>GigSathi empowers businesses to scale operational workforce seamlessly across India—from logistics and delivery to merchant acquisition and field sales.</p>
-            <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary">Hire Gig Workers <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#contact" class="btn btn-outline">Become a Partner Worker</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS BAR -->
-    <section class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3>5,000+</h3>
-                <p>Gig Workers Onboarded</p>
-            </div>
-            <div class="stat-item">
-                <h3>100+</h3>
-                <p>Enterprise Clients</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Cities Covered</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Fulfillment Rate</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TOGGLE SOLUIONS (OKAYGO STYLE: CLIENTS VS GIG WORKERS) -->
-    <section class="toggle-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Tailored Solutions for <span>Everyone</span></h2>
-                <p>Whether you need workforce for your business or flexible earn opportunities, we’ve got you covered.</p>
-            </div>
-
-            <div class="tab-switcher">
-                <div class="tab-box">
-                    <button class="tab-btn active" onclick="switchTab('businesses')">For Businesses</button>
-                    <button class="tab-btn" onclick="switchTab('workers')">For Gig Workers</button>
-                </div>
-            </div>
-
-            <!-- TAB 1: FOR BUSINESSES -->
-            <div id="tab-businesses" class="tab-content active">
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                        <h3>Delivery Boys & Rider Staffing</h3>
-                        <p>Immediate riders and delivery executives for quick commerce, e-commerce, and food delivery platforms.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-user-group"></i></div>
-                        <h3>Field Sales & Merchandisers</h3>
-                        <p>Experienced field executives to scale offline sales, product promotions, and retail auditing.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-qrcode"></i></div>
-                        <h3>Merchant Acquisition (QR/FinTech)</h3>
-                        <p>Onboard merchants, deploy QR codes, and activate POS terminals at scale across Tier 1, 2, and 3 cities.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-                        <h3>Telecalling & Back-Office</h3>
-                        <p>Verified telecallers, lead generation experts, and customer support representatives on demand.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: FOR GIG WORKERS -->
-            <div id="tab-workers" class="tab-content">
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-clock"></i></div>
-                        <h3>Flexible Work Hours</h3>
-                        <p>Work whenever you want. Choose gigs that fit your daily schedule and location preferences.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-wallet"></i></div>
-                        <h3>Weekly & Timely Payouts</h3>
-                        <p>Get paid directly into your bank account on a weekly basis without any delay.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Multiple Work Categories</h3>
-                        <p>Work across delivery, merchant onboarding, field surveys, and telecalling with top brands.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-certificate"></i></div>
-                        <h3>Free Skill Training</h3>
-                        <p>Get trained by industry professionals to upgrade your skills and boost your earning potential.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="process" style="background: rgba(255,255,255,0.01);">
-        <div class="container">
-            <div class="section-header">
-                <h2>How <span>GigSathi</span> Works</h2>
-                <p>A simple step-by-step process designed to get your tasks executed seamlessly.</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h4>Share Requirements</h4>
-                    <p>Specify the number of gig workers, job role, location, and timeline.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h4>Automated Matching</h4>
-                    <p>Our smart platform matches trained and background-verified workers instantly.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h4>Deployment & Execution</h4>
-                    <p>Workers report on-site or remotely to begin task execution with real-time tracking.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">04</div>
-                    <h4>Quality Check & Payout</h4>
-                    <p>Review performance metrics, approve completed tasks, and process payments effortlessly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & HIRE FORM -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Ready to Scale Your Operations?</h2>
-                    <p>Talk to our workforce expert today and get on-demand staff deployed in less than 24 hours.</p>
-                    
-                    <div class="info-list">
-                        <div class="info-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <div>
-                                <h4 style="font-size: 0.9rem; color: var(--text-light);">Headquarters</h4>
-                                <p style="font-weight: 700;">B-21, Sector-63, Noida, UP – 201301</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <div>
-                                <h4 style="font-size: 0.9rem; color: var(--text-light);">Phone Support</h4>
-                                <p style="font-weight: 700;">+91 7042921563</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div>
-                                <h4 style="font-size: 0.9rem; color: var(--text-light);">Email Query</h4>
-                                <p style="font-weight: 700;">mis.gigsathi@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label>Your Full Name</label>
-                        <input type="text" class="form-control" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" required placeholder="+91 9876543210">
-                    </div>
-                    <div class="form-group">
-                        <label>Company Name</label>
-                        <input type="text" class="form-control" placeholder="Your Enterprise/Brand Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Staffing Requirement</label>
-                        <input type="text" class="form-control" required placeholder="e.g., Need 20 Delivery Executives in Delhi">
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>GIGSATHI<span>.</span></h3>
-                <p>India's leading on-demand workforce solution platform, enabling businesses to scale rapidly with verified gig professionals.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="#services">Delivery Staffing</a></li>
-                    <li><a href="#services">Field Sales Executives</a></li>
-                    <li><a href="#services">Merchant Onboarding</a></li>
-                    <li><a href="#services">Telecalling Staff</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#process">How It Works</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 GIGSATHI MANAGEMENT SERVICES. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/917042921563" class="float-whatsapp" target="_blank" aria-label="WhatsApp Chat">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- SCRIPT LOGIC -->
-    <script>
-        // Mobile Navigation Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Tab Switcher (Businesses vs Gig Workers)
-        function switchTab(tabName) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            const contents = document.querySelectorAll('.tab-content');
-
-            buttons.forEach(btn => btn.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
-
-            if (tabName === 'businesses') {
-                buttons[0].classList.add('active');
-                document.getElementById('tab-businesses').classList.add('active');
-            } else {
-                buttons[1].classList.add('active');
-                document.getElementById('tab-workers').classList.add('active');
-            }
-        }
-
-        // Form Submit Handler
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            alert('Thank you for connecting with GigSathi! Our workforce team will reach out to you shortly.');
-            e.target.reset();
-        }
-    </script>
-</body>
-</html>
+G
+GigSathi
+Solutions
+How it works
+Industries
+Contact
+Talk to us
+Workforce execution, built for scale
+Get work done.
+At scale.
+GigSathi Management Services helps businesses hire, deploy and manage delivery riders, field executives, sales teams, gig workers and operational workforce — with speed, visibility and accountability.
+
+Start a Pilot →
+Call GigSathi
+Fast deployment
+Built for urgent workforce needs
+Live visibility
+Track execution & productivity
+Pan-India model
+Flexible city-wise scaling
+GigSathi Control Center
+● LIVE OPERATIONS
+Active workforce
+1,500+
+Tasks today
+8,420
+Completion
+98.4%
+Deployment health
+Rider Hiring
+91%
+Field Sales
+84%
+Audits
+96%
+Delhi NCR · Delivery Riders
+● Active
+Noida · Merchant Acquisition
+● 128 deployed
+Lucknow · Field Verification
+● 94% done
+1,500+
+Workforce network*
+100+
+Enterprise / business projects*
+Pan-India
+Deployment model
+24×7
+Operational support
+What we execute
+One partner for workforce execution.
+From sourcing and onboarding to deployment, attendance, quality checks and reporting — GigSathi is designed to reduce the operational load on your team.
+
+01
+Rider Hiring
+Delivery riders and last-mile workforce for quick commerce, food delivery and logistics operations.
+
+02
+Gig Staffing
+Flexible workforce for seasonal peaks, projects, city launches and on-demand operations.
+
+03
+Field Sales
+Field executives for merchant acquisition, customer acquisition, lead generation and BD.
+
+04
+Audits & Verification
+Retail audits, KYC support, field verification, market visits and structured reporting.
+
+05
+Telecalling
+Trained calling teams for lead qualification, follow-ups, customer support and campaigns.
+
+06
+Warehouse Manpower
+Pickers, packers, loaders and hub support workforce for high-volume operations.
+
+07
+Retail Workforce
+Promoters, retail staff and feet-on-street teams for multi-location execution.
+
+08
+Customer Acquisition
+Distributed acquisition teams for fintech, BFSI, commerce and digital products.
+
+How it works
+From requirement to deployment — without the chaos.
+A structured operating model that lets your business focus on outcomes while GigSathi manages the workforce layer.
+
+01
+Requirement & Screening
+Understand role, geography, volume and SLA; source and screen the right workforce.
+
+02
+Onboarding & Training
+KYC, documentation, SOP training and role-specific onboarding before deployment.
+
+03
+Deployment & Tracking
+Deploy city-wise and monitor attendance, productivity and field progress.
+
+04
+QC, Reporting & Billing
+Validate execution, resolve exceptions and provide structured reports for closure.
+
+Source & ScreenLive TrackingQC & ReportsDeploy
+GIG
+OPERATING
+LAYER
+Built for real-world operations
+Industries we can support.
+Flexible workforce and field execution across high-frequency, distributed business environments.
+
+Logistics & Delivery
+Riders · hubs · last mile
+E-commerce
+Delivery · retail · operations
+BFSI & Fintech
+Acquisition · verification · sales
+Retail & FMCG
+Audits · promoters · merchandising
+Quick Commerce
+Dark-store & delivery staffing
+Consumer Brands
+Field marketing · activation
+Market Research
+Surveys · mystery shopping
+Technology
+Field ops · data collection
+Have a workforce requirement?
+Tell us the city, role and expected volume. We’ll build a practical deployment plan around your business.
+
+Discuss your requirement →
+Start a conversation
+Let’s build your execution plan.
+Share your requirement and the GigSathi team can connect with you to discuss scope, locations and deployment.
+
+GigSathi Management Services
+Office
+B21, Sec 63, Noida, UP
+Phone
++91 70429 215363
+Email
+Shanku.Singh@gigsathi.in
+Best for
+Rider hiring · Gig staffing · Field sales · Audits · Acquisition
+Start a Pilot
+Full name
+Company name
+Phone number
+Work email
+
+Select service required
+Tell us about your requirement — city, workforce needed, volume, timeline...
+
+Submit Requirement →
+FAQ
+Questions, answered.
+How quickly can GigSathi deploy workforce?
+Can you handle multi-city requirements?
+Do you provide only hiring or end-to-end management?
+Can we start with a small pilot?
+© 2026 GigSathi Management Services. All rights reserved.
+B21, Sec 63, Noida, UP · +91 70429 215363 · Shanku.Singh@gigsathi.in
