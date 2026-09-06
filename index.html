@@ -4,16 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GigSathi Management Services | Workforce & Task Fulfilment Platform for India's growing businesses</title>
+<title>GigSathi | Workforce & Task Fulfilment Platform</title>
 
-<meta name="description" content="GigSathi Management Services provides reliable workforce, rider hiring, field sales, recruitment and customer acquisition solutions for growing businesses across India.">
+<meta name="description" content="GigSathi helps businesses hire workforce, execute field tasks, manage operations and scale across locations.">
+
+<meta name="keywords" content="GigSathi, workforce solutions, task fulfilment, rider hiring, field workforce, manpower, gig workers, recruitment, field operations">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 html{
@@ -21,6 +28,7 @@ html{
 }
 
 body{
+    font-family:'Inter',Arial,sans-serif;
     background:#ffffff;
     color:#111827;
     line-height:1.6;
@@ -31,24 +39,29 @@ a{
     color:inherit;
 }
 
+img{
+    max-width:100%;
+}
+
 .container{
     width:90%;
     max-width:1200px;
     margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
-header{
+.navbar{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,0.96);
-    border-bottom:1px solid #eee;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #eeeeee;
+    backdrop-filter:blur(10px);
 }
 
-.navbar{
-    height:76px;
+.nav-inner{
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -58,6 +71,7 @@ header{
     font-size:27px;
     font-weight:800;
     letter-spacing:-1px;
+    color:#111827;
 }
 
 .logo span{
@@ -67,13 +81,14 @@ header{
 .nav-links{
     display:flex;
     align-items:center;
-    gap:32px;
-    list-style:none;
+    gap:30px;
 }
 
 .nav-links a{
-    font-size:15px;
+    font-size:14px;
     font-weight:600;
+    color:#374151;
+    transition:.2s;
 }
 
 .nav-links a:hover{
@@ -81,48 +96,61 @@ header{
 }
 
 .nav-btn{
-    background:#111827;
-    color:white!important;
-    padding:12px 21px;
+    background:#2563eb !important;
+    color:#fff !important;
+    padding:12px 20px;
     border-radius:8px;
 }
 
-.menu{
+.menu-btn{
     display:none;
-    font-size:28px;
+    font-size:25px;
     cursor:pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-    padding:105px 0 90px;
-    background:linear-gradient(180deg,#f8fbff 0%,#fff 100%);
+    padding:95px 0 85px;
+    background:
+    radial-gradient(circle at 85% 20%,rgba(37,99,235,.09),transparent 30%),
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
+    grid-template-columns:1.05fr .95fr;
     align-items:center;
+    gap:60px;
 }
 
 .badge{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     padding:8px 14px;
-    background:#eef4ff;
+    border:1px solid #dbeafe;
+    background:#eff6ff;
     color:#2563eb;
-    border-radius:30px;
+    border-radius:50px;
     font-size:13px;
     font-weight:700;
     margin-bottom:22px;
 }
 
+.badge-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#2563eb;
+}
+
 .hero h1{
-    font-size:62px;
+    font-size:58px;
     line-height:1.05;
-    letter-spacing:-3px;
+    letter-spacing:-2.5px;
     margin-bottom:24px;
+    color:#0f172a;
 }
 
 .hero h1 span{
@@ -130,24 +158,27 @@ header{
 }
 
 .hero p{
-    font-size:19px;
+    max-width:650px;
+    font-size:18px;
     color:#64748b;
-    max-width:600px;
     margin-bottom:32px;
 }
 
-.buttons{
+.hero-buttons{
     display:flex;
     gap:14px;
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:15px 25px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 24px;
     border-radius:8px;
     font-weight:700;
-    transition:.3s;
+    font-size:14px;
+    transition:.25s;
 }
 
 .btn-primary{
@@ -161,8 +192,9 @@ header{
 }
 
 .btn-secondary{
+    background:#fff;
     border:1px solid #d1d5db;
-    background:white;
+    color:#111827;
 }
 
 .btn-secondary:hover{
@@ -170,379 +202,727 @@ header{
     color:#2563eb;
 }
 
-.hero-card{
-    background:#111827;
-    color:white;
-    padding:42px;
-    border-radius:22px;
-    box-shadow:0 25px 60px rgba(0,0,0,.13);
+/* Dashboard */
+
+.dashboard{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(15,23,42,.10);
+    overflow:hidden;
 }
 
-.hero-card h3{
-    font-size:25px;
+.dashboard-top{
+    padding:18px 20px;
+    border-bottom:1px solid #eef2f7;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.dashboard-title{
+    font-weight:800;
+    font-size:14px;
+}
+
+.live{
+    font-size:11px;
+    color:#16a34a;
+    font-weight:700;
+}
+
+.dashboard-body{
+    padding:22px;
+}
+
+.metric-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
     margin-bottom:20px;
 }
 
-.hero-card p{
-    color:#cbd5e1;
-    font-size:16px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-top:30px;
-}
-
-.stat{
-    padding:20px;
-    background:#1f2937;
+.metric{
+    padding:18px;
+    background:#f8fafc;
     border-radius:12px;
 }
 
-.stat strong{
+.metric small{
+    color:#64748b;
+    font-size:11px;
+}
+
+.metric strong{
     display:block;
     font-size:25px;
+    margin-top:4px;
 }
 
-/* SECTIONS */
-
-section{
-    padding:95px 0;
+.operation{
+    border-top:1px solid #eef2f7;
+    padding-top:18px;
 }
 
-.section-heading{
-    max-width:700px;
-    margin-bottom:50px;
+.operation h4{
+    font-size:13px;
+    margin-bottom:13px;
 }
 
-.section-heading .small{
-    color:#2563eb;
-    font-size:14px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.section-heading h2{
-    font-size:43px;
-    line-height:1.15;
-    margin:12px 0;
-    letter-spacing:-1.5px;
-}
-
-.section-heading p{
-    color:#64748b;
-    font-size:17px;
-}
-
-/* SERVICES */
-
-.services{
-    background:#f8fafc;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.service-card{
-    background:#fff;
-    border:1px solid #e5e7eb;
-    border-radius:15px;
-    padding:32px;
-    transition:.3s;
-}
-
-.service-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    border-color:#bfdbfe;
-}
-
-.icon{
-    width:50px;
-    height:50px;
-    border-radius:12px;
-    background:#eff6ff;
+.city{
     display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    font-size:12px;
+    color:#475569;
+}
+
+.city span:last-child{
+    font-weight:700;
+    color:#111827;
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+    padding:30px 0;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.trust-content{
+    display:flex;
+    justify-content:space-between;
     align-items:center;
-    justify-content:center;
-    font-size:24px;
-    margin-bottom:22px;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.service-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:#64748b;
-    font-size:15px;
-}
-
-/* ABOUT */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.about-box{
-    background:#f8fafc;
-    padding:40px;
-    border-radius:20px;
-}
-
-.about-box h3{
-    font-size:25px;
-    margin-bottom:15px;
-}
-
-.about-box p{
-    color:#64748b;
-}
-
-.check-list{
-    list-style:none;
-    margin-top:25px;
-}
-
-.check-list li{
-    margin:13px 0;
+.trust p{
+    color:#94a3b8;
+    font-size:13px;
     font-weight:600;
 }
 
-.check-list li::before{
-    content:"✓";
+.trust-items{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+    color:#64748b;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:90px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 50px;
+}
+
+.eyebrow{
     color:#2563eb;
-    font-weight:bold;
-    margin-right:12px;
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:1.5px;
+    font-weight:800;
+    margin-bottom:12px;
 }
 
-/* PROCESS */
-
-.process{
-    background:#f8fafc;
+.section-head h2{
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:-1.3px;
+    margin-bottom:15px;
 }
 
-.process-grid{
+.section-head p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* ================= SOLUTIONS ================= */
+
+.solutions{
+    background:#fff;
+}
+
+.cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
-.process-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
+.card{
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:28px;
+    background:#fff;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(15,23,42,.08);
+    border-color:#bfdbfe;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff6ff;
+    color:#2563eb;
+    font-size:21px;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.card ul{
+    list-style:none;
+}
+
+.card li{
+    font-size:13px;
+    color:#475569;
+    padding:5px 0;
+}
+
+.card li::before{
+    content:"✓";
+    color:#2563eb;
+    font-weight:800;
+    margin-right:8px;
+}
+
+/* ================= TWO JOURNEYS ================= */
+
+.journeys{
+    background:#f8fafc;
+}
+
+.journey-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.journey{
+    padding:42px;
+    border-radius:18px;
+    background:#fff;
     border:1px solid #e5e7eb;
 }
 
-.number{
-    font-size:35px;
-    font-weight:800;
-    color:#2563eb;
-    margin-bottom:15px;
-}
-
-/* CTA */
-
-.cta{
-    padding:80px 0;
-}
-
-.cta-box{
-    background:#111827;
+.journey.blue{
+    background:#0f172a;
     color:#fff;
-    border-radius:22px;
-    padding:65px;
-    text-align:center;
+    border:none;
 }
 
-.cta-box h2{
-    font-size:42px;
-    margin-bottom:15px;
+.journey .tag{
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#2563eb;
+    margin-bottom:12px;
 }
 
-.cta-box p{
+.journey.blue .tag{
+    color:#93c5fd;
+}
+
+.journey h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.journey p{
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+.journey.blue p{
     color:#cbd5e1;
-    max-width:650px;
-    margin:0 auto 30px;
 }
 
-/* CONTACT */
+.journey ul{
+    list-style:none;
+    margin-bottom:28px;
+}
 
-.contact-grid{
+.journey li{
+    padding:8px 0;
+    font-size:14px;
+}
+
+.journey li::before{
+    content:"✓";
+    margin-right:10px;
+    color:#2563eb;
+    font-weight:800;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    background:#fff;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
+.process-step{
+    position:relative;
+    text-align:center;
+    padding:20px 10px;
+}
+
+.process-number{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#eff6ff;
+    color:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 14px;
+    font-weight:800;
+}
+
+.process-step h4{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.process-step p{
+    color:#64748b;
+    font-size:11px;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    background:#f8fafc;
+}
+
+.feature-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
+    align-items:center;
 }
 
-.contact-info h3{
-    font-size:28px;
+.feature-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.feature{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    padding:20px;
+    border-radius:12px;
+}
+
+.feature strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.feature span{
+    font-size:12px;
+    color:#64748b;
+}
+
+.tech-box{
+    background:#0f172a;
+    color:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(15,23,42,.18);
+}
+
+.tech-box h3{
+    font-size:26px;
     margin-bottom:20px;
 }
 
+.tech-flow{
+    display:flex;
+    flex-direction:column;
+}
+
+.tech-item{
+    padding:14px 0;
+    border-bottom:1px solid #334155;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.tech-item:last-child{
+    border-bottom:none;
+}
+
+.tech-item span{
+    color:#94a3b8;
+}
+
+/* ================= INDUSTRIES ================= */
+
+.industry-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.industry{
+    padding:22px 15px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:700;
+    background:#fff;
+    transition:.2s;
+}
+
+.industry:hover{
+    border-color:#93c5fd;
+    color:#2563eb;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    padding:75px 0;
+    background:#0f172a;
+    color:#fff;
+}
+
+.cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:38px;
+    line-height:1.15;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#cbd5e1;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#f8fafc;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:50px;
+}
+
+.contact-info h2{
+    font-size:38px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.contact-info>p{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
 .contact-item{
-    margin:20px 0;
+    display:flex;
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.contact-icon{
+    width:40px;
+    height:40px;
+    background:#eff6ff;
+    color:#2563eb;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
 }
 
 .contact-item strong{
     display:block;
-    margin-bottom:4px;
+    font-size:13px;
 }
 
 .contact-item span{
     color:#64748b;
+    font-size:13px;
 }
 
-.contact-form{
-    display:flex;
-    flex-direction:column;
+.form{
+    background:#fff;
+    padding:32px;
+    border-radius:16px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 15px 40px rgba(15,23,42,.05);
+}
+
+.form h3{
+    font-size:23px;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:15px;
 }
 
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:15px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    font-size:15px;
-    outline:none;
+.input-group{
+    margin-bottom:15px;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus{
+.input-group.full{
+    grid-column:1/-1;
+}
+
+.input-group label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    width:100%;
+    padding:12px 13px;
+    border:1px solid #dbe2ea;
+    border-radius:8px;
+    outline:none;
+    font-family:inherit;
+    font-size:13px;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
     border-color:#2563eb;
 }
 
-.contact-form textarea{
-    height:130px;
-    resize:none;
+textarea{
+    min-height:110px;
+    resize:vertical;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#111827;
+    background:#020617;
     color:#fff;
-    padding:45px 0 25px;
+    padding:55px 0 25px;
 }
 
 .footer-grid{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
     gap:40px;
+    padding-bottom:40px;
 }
 
-footer p{
-    color:#9ca3af;
-    margin-top:12px;
+.footer-logo{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.footer-logo span{
+    color:#60a5fa;
+}
+
+.footer-about{
+    color:#94a3b8;
+    font-size:13px;
+    max-width:320px;
 }
 
 footer h4{
+    font-size:13px;
     margin-bottom:15px;
 }
 
-.footer-links{
-    list-style:none;
-}
-
-.footer-links li{
-    margin:9px 0;
-    color:#cbd5e1;
-}
-
-.copyright{
-    border-top:1px solid #374151;
-    margin-top:35px;
-    padding-top:20px;
-    color:#9ca3af;
+.footer-links a{
+    display:block;
+    color:#94a3b8;
     font-size:13px;
+    margin-bottom:9px;
 }
 
-/* WHATSAPP */
+.footer-links a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    padding-top:22px;
+    border-top:1px solid #1e293b;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:11px;
+}
+
+/* ================= FLOATING BUTTONS ================= */
 
 .whatsapp{
     position:fixed;
     right:22px;
     bottom:22px;
-    width:62px;
-    height:62px;
+    z-index:999;
+    background:#25d366;
+    color:#fff;
+    width:55px;
+    height:55px;
     border-radius:50%;
-    background:#25D366;
-    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:31px;
-    box-shadow:0 8px 25px rgba(0,0,0,.22);
-    z-index:9999;
-    transition:.3s;
+    font-size:24px;
+    font-weight:800;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
-.whatsapp:hover{
-    transform:scale(1.1);
+.call{
+    position:fixed;
+    left:22px;
+    bottom:22px;
+    z-index:999;
+    background:#2563eb;
+    color:#fff;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:800;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:850px){
+@media(max-width:1000px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .industry-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:800px){
 
     .nav-links{
         display:none;
         position:absolute;
         top:76px;
         left:0;
-        right:0;
-        background:white;
+        width:100%;
+        background:#fff;
         flex-direction:column;
-        padding:25px;
+        padding:20px;
         border-bottom:1px solid #eee;
-        gap:20px;
+        gap:18px;
     }
 
     .nav-links.active{
         display:flex;
     }
 
-    .menu{
+    .menu-btn{
         display:block;
     }
 
-    .hero{
-        padding:70px 0;
+    .hero-grid,
+    .feature-grid,
+    .contact-grid,
+    .journey-grid{
+        grid-template-columns:1fr;
     }
 
-    .hero-grid,
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .hero{
+        padding:65px 0;
     }
 
     .hero h1{
-        font-size:45px;
+        font-size:43px;
     }
 
-    .service-grid{
-        grid-template-columns:1fr 1fr;
+    .hero p{
+        font-size:16px;
     }
 
-    .process-grid{
-        grid-template-columns:1fr 1fr;
+    .section-head h2{
+        font-size:32px;
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
     .footer-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
     }
+
 }
 
 @media(max-width:550px){
@@ -551,76 +931,90 @@ footer h4{
         width:92%;
     }
 
+    section{
+        padding:65px 0;
+    }
+
     .hero h1{
-        font-size:38px;
+        font-size:37px;
         letter-spacing:-1.5px;
     }
 
-    .hero p{
-        font-size:17px;
+    .hero-buttons{
+        flex-direction:column;
     }
 
-    section{
-        padding:70px 0;
+    .btn{
+        width:100%;
     }
 
-    .section-heading h2{
-        font-size:34px;
-    }
-
-    .service-grid,
-    .process-grid{
+    .cards,
+    .feature-list,
+    .form-grid{
         grid-template-columns:1fr;
     }
 
-    .hero-card{
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .industry-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .journey{
         padding:28px;
     }
 
-    .cta-box{
-        padding:40px 22px;
+    .footer-grid{
+        grid-template-columns:1fr;
     }
 
-    .cta-box h2{
-        font-size:32px;
+    .footer-bottom{
+        flex-direction:column;
     }
 
-    .whatsapp{
-        width:55px;
-        height:55px;
-        right:16px;
-        bottom:16px;
-        font-size:27px;
+    .dashboard{
+        margin-top:10px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= NAVBAR ================= -->
 
-<header>
-<div class="container navbar">
+<header class="navbar">
 
-<a href="#" class="logo">Gig<span>Sathi</span></a>
+<div class="container nav-inner">
 
-<ul class="nav-links" id="navLinks">
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#process">How It Works</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="#contact" class="nav-btn">Get Started</a></li>
-</ul>
+<a href="#" class="logo">
+Gig<span>Sathi</span>
+</a>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+<nav class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#solutions">Solutions</a>
+<a href="#process">How It Works</a>
+<a href="#industries">Industries</a>
+<a href="#about">About Us</a>
+<a href="#partner">Gig Partners</a>
+<a href="#contact" class="nav-btn">Contact Us</a>
+
+</nav>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -628,194 +1022,349 @@ footer h4{
 
 <div>
 
-<div class="badge">WORKFORCE • RECRUITMENT • GIG SOLUTIONS</div>
+<div class="badge">
+<span class="badge-dot"></span>
+Workforce & Task Fulfilment Platform
+</div>
 
 <h1>
-Building a <span>Reliable Workforce</span> for Growing Businesses.
+Workforce that works.<br>
+<span>Tasks that get done.</span>
 </h1>
 
 <p>
-GigSathi Management Services helps businesses hire, manage and scale reliable frontline and gig workforce across India.
+GigSathi helps businesses hire, deploy and manage workforce,
+execute field tasks and scale operations across locations.
 </p>
 
-<div class="buttons">
-<a href="#contact" class="btn btn-primary">Hire Workforce</a>
+<div class="hero-buttons">
 
-<a href="https://wa.me/919XXXXXXXXX?text=Hello%20GigSathi%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="btn btn-secondary">
-WhatsApp Us
+<a href="#contact" class="btn btn-primary">
+Hire Workforce
 </a>
-</div>
 
-</div>
-
-
-<div class="hero-card">
-
-<h3>Workforce Solutions That Scale</h3>
-
-<p>
-From rider hiring to field sales and recruitment, GigSathi connects businesses with dependable workforce solutions designed for speed and scale.
-</p>
-
-<div class="stats">
-
-<div class="stat">
-<strong>Pan India</strong>
-<span>Workforce Network</span>
-</div>
-
-<div class="stat">
-<strong>Fast</strong>
-<span>Hiring Support</span>
-</div>
-
-<div class="stat">
-<strong>Flexible</strong>
-<span>Workforce Models</span>
-</div>
-
-<div class="stat">
-<strong>Scalable</strong>
-<span>Business Solutions</span>
-</div>
+<a href="#contact" class="btn btn-secondary">
+Start a Project
+</a>
 
 </div>
 
 </div>
 
+
+<div class="dashboard">
+
+<div class="dashboard-top">
+
+<div class="dashboard-title">
+GigSathi Operations
 </div>
+
+<div class="live">
+● LIVE OPERATIONS
+</div>
+
+</div>
+
+<div class="dashboard-body">
+
+<div class="metric-grid">
+
+<div class="metric">
+<small>Active Projects</small>
+<strong>24+</strong>
+</div>
+
+<div class="metric">
+<small>Workforce Network</small>
+<strong>5K+</strong>
+</div>
+
+<div class="metric">
+<small>Tasks Executed</small>
+<strong>10K+</strong>
+</div>
+
+<div class="metric">
+<small>Locations</small>
+<strong>50+</strong>
+</div>
+
+</div>
+
+<div class="operation">
+
+<h4>Operational Coverage</h4>
+
+<div class="city">
+<span>Delhi NCR</span>
+<span>Active</span>
+</div>
+
+<div class="city">
+<span>Noida</span>
+<span>Active</span>
+</div>
+
+<div class="city">
+<span>Gurugram</span>
+<span>Active</span>
+</div>
+
+<div class="city">
+<span>Pan India</span>
+<span>Expanding</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= TRUST ================= -->
 
-<section class="services" id="services">
+<div class="trust">
+
+<div class="container trust-content">
+
+<p>BUILT FOR BUSINESSES THAT NEED EXECUTION AT SCALE</p>
+
+<div class="trust-items">
+
+<span>FinTech</span>
+<span>Banking</span>
+<span>NBFC</span>
+<span>E-commerce</span>
+<span>Logistics</span>
+<span>Retail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= SOLUTIONS ================= -->
+
+<section class="solutions" id="solutions">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="section-head">
 
-<div class="small">Our Services</div>
+<div class="eyebrow">Our Solutions</div>
 
-<h2>Workforce solutions built for modern businesses.</h2>
+<h2>
+One partner for workforce and field execution.
+</h2>
 
 <p>
-From frontline hiring to customer acquisition, we provide flexible and scalable workforce solutions.
+From hiring people to executing tasks, GigSathi helps businesses
+manage the complete operational journey.
 </p>
 
 </div>
 
 
-<div class="service-grid">
-
-<div class="service-card">
-<div class="icon">🏍️</div>
-<h3>Rider Hiring</h3>
-<p>Reliable delivery riders for food delivery, e-commerce and logistics businesses.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">🚗</div>
-<h3>Driver Hiring</h3>
-<p>Skilled drivers for logistics, mobility and operational requirements.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">👥</div>
-<h3>Field Workforce</h3>
-<p>On-ground workforce for sales, verification, collection and business operations.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">🏢</div>
-<h3>Warehouse Staffing</h3>
-<p>Flexible manpower solutions for warehouse and fulfilment operations.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">📈</div>
-<h3>Sales Hiring</h3>
-<p>Field sales executives and business development workforce for growing companies.</p>
-</div>
-
-<div class="service-card">
-<div class="icon">📞</div>
-<h3>Telecaller Hiring</h3>
-<p>Telecalling and customer support workforce for business growth and operations.</p>
-</div>
-
-</div>
-</div>
-</section>
+<div class="cards">
 
 
-<!-- ABOUT -->
+<div class="card">
 
-<section id="about">
+<div class="icon">01</div>
 
-<div class="container about-grid">
-
-<div>
-
-<div class="section-heading">
-
-<div class="small">About GigSathi</div>
-
-<h2>Your workforce. Our network.</h2>
+<h3>Workforce Solutions</h3>
 
 <p>
-GigSathi Management Services is focused on helping businesses solve their frontline workforce and customer acquisition challenges.
+Recruit and deploy reliable workforce according to your business requirement.
 </p>
 
-</div>
-
-<ul class="check-list">
-<li>Fast and scalable recruitment</li>
-<li>Flexible workforce solutions</li>
-<li>Dedicated operational support</li>
-<li>Technology-driven approach</li>
-<li>Business-focused hiring models</li>
+<ul>
+<li>Delivery Riders</li>
+<li>Drivers</li>
+<li>Field Sales Executives</li>
+<li>Warehouse Staff</li>
+<li>Retail Staff</li>
 </ul>
 
 </div>
 
 
-<div class="about-box">
+<div class="card">
 
-<h3>Our Mission</h3>
+<div class="icon">02</div>
 
-<p>
-To make workforce hiring simple, faster and more accessible for businesses while creating better earning opportunities for India's gig and frontline workforce.
-</p>
-
-<br>
-
-<h3>Our Vision</h3>
+<h3>Task Fulfilment</h3>
 
 <p>
-To become a trusted workforce and gig solutions partner for businesses across India.
+Execute field and digital tasks through trained gig workforce.
 </p>
+
+<ul>
+<li>Customer Onboarding</li>
+<li>Merchant Onboarding</li>
+<li>KYC & Verification</li>
+<li>Surveys</li>
+<li>Data Collection</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">03</div>
+
+<h3>Field Operations</h3>
+
+<p>
+Build and manage distributed field teams across locations.
+</p>
+
+<ul>
+<li>Field Deployment</li>
+<li>Attendance</li>
+<li>Supervisor Management</li>
+<li>Productivity Tracking</li>
+<li>Quality Control</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">04</div>
+
+<h3>Last-Mile Operations</h3>
+
+<p>
+Flexible rider and fleet workforce for last-mile businesses.
+</p>
+
+<ul>
+<li>Rider Hiring</li>
+<li>Rider Onboarding</li>
+<li>Fleet Deployment</li>
+<li>Replacement Support</li>
+<li>Operational Management</li>
+</ul>
+
+</div>
+
 
 </div>
 
 </div>
+
 </section>
 
 
-<!-- PROCESS -->
+<!-- ================= TWO JOURNEYS ================= -->
+
+<section class="journeys" id="partner">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">Two Ways To Work With Us</div>
+
+<h2>
+Built for businesses and gig partners.
+</h2>
+
+</div>
+
+
+<div class="journey-grid">
+
+
+<div class="journey">
+
+<div class="tag">For Businesses</div>
+
+<h3>Need people or tasks executed?</h3>
+
+<p>
+Tell us your requirement and our operations team can help
+you build, deploy and manage the required workforce.
+</p>
+
+<ul>
+<li>Hire workforce</li>
+<li>Deploy field teams</li>
+<li>Execute customer acquisition</li>
+<li>Conduct surveys & audits</li>
+<li>Manage riders</li>
+<li>Get structured MIS</li>
+</ul>
+
+<a href="#contact" class="btn btn-primary">
+Start a Project
+</a>
+
+</div>
+
+
+<div class="journey blue">
+
+<div class="tag">For Gig Partners</div>
+
+<h3>Want to earn with flexible work?</h3>
+
+<p>
+Join the GigSathi network and discover suitable opportunities
+based on your location and skills.
+</p>
+
+<ul>
+<li>Access work opportunities</li>
+<li>Choose suitable assignments</li>
+<li>Complete tasks</li>
+<li>Track your work</li>
+<li>Build your work profile</li>
+<li>Receive payouts as per project terms</li>
+</ul>
+
+<a href="#contact" class="btn btn-secondary">
+Become a Gig Partner
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
 
 <section class="process" id="process">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="section-head">
 
-<div class="small">How It Works</div>
+<div class="eyebrow">How It Works</div>
 
-<h2>Simple process. Faster hiring.</h2>
+<h2>
+From requirement to execution.
+</h2>
 
 <p>
-Our process is designed to reduce hiring time and help businesses scale their workforce efficiently.
+A structured operational process designed for reliable,
+scalable field execution.
 </p>
 
 </div>
@@ -823,175 +1372,588 @@ Our process is designed to reduce hiring time and help businesses scale their wo
 
 <div class="process-grid">
 
-<div class="process-card">
-<div class="number">01</div>
-<h3>Share Requirement</h3>
-<p>Tell us about your workforce requirement and hiring location.</p>
+
+<div class="process-step">
+<div class="process-number">01</div>
+<h4>Requirement</h4>
+<p>Understand project scope and target.</p>
 </div>
 
-<div class="process-card">
-<div class="number">02</div>
-<h3>Candidate Sourcing</h3>
-<p>Our recruitment network starts sourcing suitable candidates.</p>
+
+<div class="process-step">
+<div class="process-number">02</div>
+<h4>Recruit</h4>
+<p>Source and screen suitable workforce.</p>
 </div>
 
-<div class="process-card">
-<div class="number">03</div>
-<h3>Screening</h3>
-<p>Candidates are screened according to your business requirements.</p>
+
+<div class="process-step">
+<div class="process-number">03</div>
+<h4>Train</h4>
+<p>Prepare workforce for project execution.</p>
 </div>
 
-<div class="process-card">
-<div class="number">04</div>
-<h3>Deployment</h3>
-<p>Selected candidates are onboarded and deployed for operations.</p>
+
+<div class="process-step">
+<div class="process-number">04</div>
+<h4>Deploy</h4>
+<p>Deploy workforce across locations.</p>
 </div>
+
+
+<div class="process-step">
+<div class="process-number">05</div>
+<h4>Verify</h4>
+<p>Monitor quality and task completion.</p>
+</div>
+
+
+<div class="process-step">
+<div class="process-number">06</div>
+<h4>Report</h4>
+<p>MIS, productivity and billing data.</p>
+</div>
+
 
 </div>
 
 </div>
+
 </section>
 
 
-<!-- CTA -->
+<!-- ================= TECHNOLOGY ================= -->
 
-<section class="cta">
+<section class="features" id="about">
+
+<div class="container feature-grid">
+
+
+<div>
+
+<div class="eyebrow">Why GigSathi</div>
+
+<h2>
+Operations designed for speed, scale and control.
+</h2>
+
+<p style="color:#64748b;margin-top:15px;">
+We combine workforce networks, structured processes and
+technology-enabled operations to help businesses execute
+projects efficiently.
+</p>
+
+
+<div class="feature-list">
+
+<div class="feature">
+<strong>Verified Workforce</strong>
+<span>Screening and verification process.</span>
+</div>
+
+<div class="feature">
+<strong>Fast Deployment</strong>
+<span>Build teams according to project needs.</span>
+</div>
+
+<div class="feature">
+<strong>Quality Control</strong>
+<span>Structured checks for task execution.</span>
+</div>
+
+<div class="feature">
+<strong>Live MIS</strong>
+<span>Operational reporting and visibility.</span>
+</div>
+
+<div class="feature">
+<strong>Flexible Scale</strong>
+<span>Scale workforce as requirements change.</span>
+</div>
+
+<div class="feature">
+<strong>Dedicated Support</strong>
+<span>Operational support throughout projects.</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="tech-box">
+
+<h3>Technology-enabled operations</h3>
+
+<div class="tech-flow">
+
+<div class="tech-item">
+<span>01</span>
+Recruitment
+</div>
+
+<div class="tech-item">
+<span>02</span>
+Digital Onboarding
+</div>
+
+<div class="tech-item">
+<span>03</span>
+Task Assignment
+</div>
+
+<div class="tech-item">
+<span>04</span>
+Attendance & Productivity
+</div>
+
+<div class="tech-item">
+<span>05</span>
+Task Proof & Verification
+</div>
+
+<div class="tech-item">
+<span>06</span>
+Quality Control
+</div>
+
+<div class="tech-item">
+<span>07</span>
+MIS & Reporting
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= INDUSTRIES ================= -->
+
+<section id="industries">
 
 <div class="container">
 
-<div class="cta-box">
+<div class="section-head">
 
-<h2>Need workforce for your business?</h2>
+<div class="eyebrow">Industries</div>
+
+<h2>
+Helping businesses execute across sectors.
+</h2>
 
 <p>
-Let's discuss your hiring requirement and build a workforce solution that fits your business.
+Flexible workforce and task fulfilment solutions for
+different operational requirements.
 </p>
 
-<a href="https://wa.me/919XXXXXXXXX?text=Hello%20GigSathi%2C%20I%20need%20workforce%20for%20my%20business." target="_blank" class="btn btn-primary">
+</div>
+
+
+<div class="industry-grid">
+
+<div class="industry">FinTech</div>
+<div class="industry">Banking</div>
+<div class="industry">NBFC</div>
+<div class="industry">E-commerce</div>
+<div class="industry">Logistics</div>
+<div class="industry">Retail</div>
+<div class="industry">FMCG</div>
+<div class="industry">Telecom</div>
+<div class="industry">Healthcare</div>
+<div class="industry">Consumer Brands</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= USE CASES ================= -->
+
+<section style="background:#f8fafc;">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">Use Cases</div>
+
+<h2>
+Built for real-world execution.
+</h2>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+<div class="icon">A</div>
+<h3>Rider Hiring</h3>
+<p>
+Source, screen and deploy delivery riders according to
+location and operational requirements.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">B</div>
+<h3>Customer Acquisition</h3>
+<p>
+Deploy field workforce for customer acquisition,
+onboarding and activation campaigns.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">C</div>
+<h3>Merchant Onboarding</h3>
+<p>
+Field teams can visit, onboard and verify merchants
+through structured workflows.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">D</div>
+<h3>Surveys & Audits</h3>
+<p>
+Execute location-based surveys, audits and data
+collection through distributed teams.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container cta-inner">
+
+<div>
+
+<h2>Have a project to execute?</h2>
+
+<p>
+Tell us your requirement and let's build the right workforce.
+</p>
+
+</div>
+
+<a href="#contact" class="btn btn-primary">
 Talk to GigSathi
 </a>
 
 </div>
 
-</div>
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
-<section id="contact">
+<section class="contact" id="contact">
 
 <div class="container contact-grid">
 
+
 <div class="contact-info">
 
-<div class="section-heading">
+<div class="eyebrow">Get In Touch</div>
 
-<div class="small">Contact Us</div>
+<h2>
+Let's build your workforce.
+</h2>
 
-<h2>Let's build your workforce.</h2>
+<p>
+Whether you need workforce hiring, field execution,
+rider deployment or task fulfilment, talk to our team.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">A</div>
+
+<div>
+<strong>Office</strong>
+<span>B-21, Sector 63, Noida, Uttar Pradesh</span>
+</div>
 
 </div>
 
-<div class="contact-item">
-<strong>Company</strong>
-<span>GigSathi Management Services</span>
-</div>
 
 <div class="contact-item">
-<strong>Address</strong>
-<span>B21, Sector 63, Noida, Uttar Pradesh</span>
-</div>
 
-<div class="contact-item">
+<div class="contact-icon">P</div>
+
+<div>
 <strong>Phone</strong>
-<span>+91 XXXXX XXXXX</span>
+<span>+91 70429 21563</span>
 </div>
+
+</div>
+
 
 <div class="contact-item">
+
+<div class="contact-icon">@</div>
+
+<div>
 <strong>Email</strong>
-<span>info@gigsathi.in</span>
+<span>mis.gigsathi@gmail.com</span>
 </div>
 
 </div>
 
 
-<form class="contact-form" onsubmit="sendWhatsApp(event)">
+<div class="contact-item">
 
-<input type="text" id="name" placeholder="Your Name" required>
+<div class="contact-icon">W</div>
 
-<input type="text" id="company" placeholder="Company Name">
+<div>
+<strong>WhatsApp</strong>
+<span>Available for business enquiries</span>
+</div>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+</div>
 
-<textarea id="message" placeholder="Tell us about your workforce requirement..." required></textarea>
 
-<button type="submit" class="btn btn-primary">
-Send Enquiry on WhatsApp
+</div>
+
+
+<div class="form">
+
+<h3>Tell us about your requirement</h3>
+
+<form onsubmit="submitForm(event)">
+
+<div class="form-grid">
+
+
+<div class="input-group">
+
+<label>Name *</label>
+
+<input
+type="text"
+id="name"
+placeholder="Your name"
+required>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Mobile *</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Mobile number"
+required>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Company</label>
+
+<input
+type="text"
+id="company"
+placeholder="Company name">
+
+</div>
+
+
+<div class="input-group">
+
+<label>City</label>
+
+<input
+type="text"
+id="city"
+placeholder="City / Location">
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Requirement</label>
+
+<select id="requirement">
+
+<option value="">Select requirement</option>
+<option>Workforce Hiring</option>
+<option>Rider Hiring</option>
+<option>Field Workforce</option>
+<option>Task Fulfilment</option>
+<option>Customer Onboarding</option>
+<option>Merchant Onboarding</option>
+<option>Survey / Audit</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Message</label>
+
+<textarea
+id="message"
+placeholder="Tell us about your project or workforce requirement"></textarea>
+
+</div>
+
+
+</div>
+
+
+<button type="submit" class="btn btn-primary" style="border:0;cursor:pointer;width:100%;">
+Submit Requirement
 </button>
 
 </form>
 
 </div>
+
+
+</div>
+
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container">
 
+
 <div class="footer-grid">
 
-<div>
-<h3>Gig<span style="color:#60a5fa;">Sathi</span></h3>
 
-<p>
-Workforce, recruitment and gig solutions for growing businesses.
-</p>
+<div>
+
+<div class="footer-logo">
+Gig<span>Sathi</span>
 </div>
 
+<p class="footer-about">
+Workforce & Task Fulfilment Platform helping businesses
+hire, deploy and execute operations at scale.
+</p>
+
+</div>
+
+
 <div>
+
+<h4>Solutions</h4>
+
+<div class="footer-links">
+
+<a href="#solutions">Workforce Solutions</a>
+<a href="#solutions">Task Fulfilment</a>
+<a href="#solutions">Rider Hiring</a>
+<a href="#solutions">Field Operations</a>
+
+</div>
+
+</div>
+
+
+<div>
+
 <h4>Company</h4>
 
-<ul class="footer-links">
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div class="footer-links">
+
+<a href="#about">About Us</a>
+<a href="#industries">Industries</a>
+<a href="#process">How It Works</a>
+<a href="#contact">Contact</a>
+
 </div>
+
+</div>
+
 
 <div>
-<h4>Services</h4>
 
-<ul class="footer-links">
-<li>Rider Hiring</li>
-<li>Field Workforce</li>
-<li>Sales Hiring</li>
-<li>Recruitment</li>
-</ul>
+<h4>Partners</h4>
+
+<div class="footer-links">
+
+<a href="#partner">Become a Gig Partner</a>
+<a href="#contact">Business Enquiry</a>
+<a href="#contact">Support</a>
+
 </div>
 
 </div>
 
-<div class="copyright">
-© 2026 GigSathi Management Services. All Rights Reserved.
+
 </div>
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 GigSathi Management Solutions Private Limited. All rights reserved.
+</span>
+
+<span>
+Workforce • Tasks • Execution
+</span>
+
+</div>
+
 
 </div>
 
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ================= FLOATING BUTTONS ================= -->
 
 <a
-href="https://wa.me/919XXXXXXXXX?text=Hello%20GigSathi%2C%20I%20want%20to%20know%20more%20about%20your%20services."
-target="_blank"
 class="whatsapp"
-aria-label="Chat with GigSathi on WhatsApp">
-💬
+href="https://wa.me/917042921563?text=Hello%20GigSathi%2C%20I%20want%20to%20discuss%20a%20business%20requirement."
+target="_blank"
+aria-label="WhatsApp">
+W
+</a>
+
+
+<a
+class="call"
+href="tel:+917042921563"
+aria-label="Call">
+☎
 </a>
 
 
@@ -999,33 +1961,54 @@ aria-label="Chat with GigSathi on WhatsApp">
 
 function toggleMenu(){
 
-    document.getElementById("navLinks").classList.toggle("active");
+    const nav = document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
 
 }
 
 
-function sendWhatsApp(event){
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+
+function submitForm(event){
 
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const company = document.getElementById("company").value;
     const phone = document.getElementById("phone").value;
+    const company = document.getElementById("company").value;
+    const city = document.getElementById("city").value;
+    const requirement = document.getElementById("requirement").value;
     const message = document.getElementById("message").value;
+
 
     const text =
     "Hello GigSathi,%0A%0A" +
+    "New Business Enquiry%0A%0A" +
     "Name: " + encodeURIComponent(name) + "%0A" +
+    "Mobile: " + encodeURIComponent(phone) + "%0A" +
     "Company: " + encodeURIComponent(company) + "%0A" +
-    "Phone: " + encodeURIComponent(phone) + "%0A" +
-    "Requirement: " + encodeURIComponent(message);
+    "City: " + encodeURIComponent(city) + "%0A" +
+    "Requirement: " + encodeURIComponent(requirement) + "%0A" +
+    "Message: " + encodeURIComponent(message);
+
 
     window.open(
-        "https://wa.me/919XXXXXXXXX?text=" + text,
+        "https://wa.me/917042921563?text=" + text,
         "_blank"
     );
 
 }
+
 
 </script>
 
